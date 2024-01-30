@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import styled from "styled-components";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { Button, HeaderContainer, NavLink } from "@/assets/styles";
+import { HeaderContainer } from "@/assets/styles";
 
 const Header = ({ darkmode }) => {
   return (
@@ -24,9 +23,9 @@ const Header = ({ darkmode }) => {
             {darkmode.value ? <FaMoon /> : <FaSun />}
           </button>
         ) : (
-          <Button onClick={darkmode.toggle}>
+          <button>
             <FaSun />
-          </Button>
+          </button>
         )}
         </nav>
       </div>
