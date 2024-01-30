@@ -1,10 +1,11 @@
-import Image from "next/image";
-// import styles from "./page.module.css";
+'use client';
+
+import LandingPage from "../components/LandingPage/index"
 
 export default function Home() {
   return (
     <main>
-      <p>Hello World</p>
+      <LandingPage/>
     </main>
   );
 }
