@@ -26,4 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 button,a{
   color: ${({ theme }) => theme.link};
 }
+header{
+    background: ${({ theme }) => theme.body};
+}
 `

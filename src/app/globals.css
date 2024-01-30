@@ -17,10 +17,9 @@ a {
   line-height: 20px;
   text-align: center;
   text-decoration: none;
-  :hover {
+  &:hover {
     font-weight: 600;
     cursor: pointer;
-;
   }
 }
 
@@ -28,6 +27,10 @@ button{
   background-color: transparent;
   outline: none;
   border: none;
+  &:hover {
+    font-weight: 600;
+    cursor: pointer;
+  }
 }
 
 img{

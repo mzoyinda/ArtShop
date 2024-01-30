@@ -14,12 +14,13 @@ export const HomeContainer = styled.main`
   position: relative;
 `;
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   /* mobile size */
   padding: 15px 24px;
   padding-bottom: 0;
   height: 46px;
   position: sticky;
+  /* background-color: #ffffff; */
   top: 0;
   left: 0;
   z-index: 1;
@@ -47,6 +48,8 @@ export const HeaderContainer = styled.div`
 
     .nav__links {
       display: flex;
+      align-items: center;
+    justify-content: center;
       gap: 42px;
     }
   }
@@ -76,6 +79,10 @@ export const Banner = styled.section`
 height: 70vh;
 `;
 
+export const ProductsContainer = styled.section`
+
+`;
+
 export const FooterContainer = styled.footer`
 /* position: fixed;
 bottom: 0; */
@@ -83,17 +90,14 @@ border-top:1px solid #E8E8E8;
 margin-top: 300px;
 padding-top: 10px;
 text-align: center;
-/* background-color:#76520e; */
 width: 100%;
-height: 40px;
+height: 30px;
 a{ 
-     /* color: #5e5e66; */
       font-style:cursive;
       font-weight: 600;
     text-decoration: underline;
     }
 p{
-    /* color: #5e5e66; */
     font-size: 14px;
     padding: 10px 0;
     font-weight: 500;
