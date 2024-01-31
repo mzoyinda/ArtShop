@@ -277,6 +277,78 @@ h3 {
 }
 `;
 
+export const FilterContainer = styled.section`
+  background-color: #e6e6e6;
+  width: 90%;
+  padding: 10px 15px;
+  margin: 0 24px;
+  margin-top: 20px;
+
+  input {
+    display: inline;
+    margin-left: 2px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    max-width: 250px;
+    padding: 5px 10px;
+    height: 40px;
+    border: transparent;
+    outline: none;
+    border-radius: 12px;
+
+    &:focus,
+    &:active {
+      border: 1px solid gray;
+      outline: none;
+    }
+  }
+
+  label {
+    font-size: 14px;
+    color: #201D46;
+    width: max-content;
+  }
+
+  .group {
+    display: flex;
+    max-width: 280px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    select {
+      max-width: 150px;
+      margin-left: 10px;
+      height: 40px;
+    }
+  }
+
+  @media (min-width: 680px) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 30px;
+
+    .group {
+      display: flex;
+      width: 350px;
+      align-items: center;
+      justify-content: center;
+
+      select {
+        max-width: 150px;
+        margin-left: 10px;
+      }
+    }
+  }
+`;
+
 export const RatingsContainer = styled.div`
 display: flex;
 align-items: center;
