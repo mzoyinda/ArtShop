@@ -1,6 +1,6 @@
 import React from 'react'
 import Herosection from './Herosection'
-import Products from './Products'
+import Products from './Collections'
 
 const Home = () => {
   return (
