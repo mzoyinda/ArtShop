@@ -1,6 +1,7 @@
 import { Banner } from '@/assets/styles'
 import Image from "next/image";
 import React from "react";
+import Ratings from '../Ratings';
 
 const Herosection = () => {
   return (
@@ -27,6 +28,7 @@ const Herosection = () => {
         </p>
         <button>Explore All</button>
         <p>4.8 star rating . Excellent</p>
+        <Ratings rate="4.8" />
       </div>
       <div className="gallery">
         <h2>

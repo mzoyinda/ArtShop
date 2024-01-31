@@ -1,12 +1,12 @@
 import React from 'react'
 import Herosection from './Herosection'
-import Products from './Collections'
+import Collection from './Collections'
 
 const Home = () => {
   return (
     <div>
         <Herosection/>
-        <Products/>
+        <Collection/>
     </div>
   )
 }

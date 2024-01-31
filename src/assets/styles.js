@@ -237,6 +237,7 @@ h3 {
         font-weight: 600;
         margin-top: 5px;
         margin-bottom: 5px;
+        text-transform: capitalize;
       }
       p {
         /* text-align: center; */
@@ -273,6 +274,23 @@ h3 {
       border: 1px solid #e6e6e6;
     }
   }
+}
+`;
+
+export const RatingsContainer = styled.div`
+display: flex;
+align-items: center;
+margin-top: 8px;
+justify-content: center;
+.rate{
+    max-width: 100px;
+    margin-left: 5px;
+}
+.show{
+    display: inline;
+}
+.hide{
+    display: none;
 }
 `;
 
