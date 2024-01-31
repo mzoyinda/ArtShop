@@ -83,7 +83,7 @@ export const Banner = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 70vh;
+  margin-bottom: 50px;
 
   .wrapper {
     padding: 60px 24px;

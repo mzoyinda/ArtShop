@@ -15,7 +15,7 @@ const Header = ({ darkmode }) => {
           <Link smooth href="/#collections" className="collection">
             Collections
           </Link>
-          <Link smooth href="/#about" className="products">
+          <Link smooth href="/cart" className="products">
             Cart
           </Link>
         {darkmode ? (
