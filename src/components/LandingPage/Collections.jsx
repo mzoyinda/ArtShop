@@ -10,11 +10,11 @@ import { fetchProductData } from "@/redux/slices/productSlice";
 const Products = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const dispatch = useDispatch();
-  
+
   const { loading, products } = useSelector((state) => state.productData);
 
   useEffect(() => {
-    dispatch(fetchProductData());
+    // dispatch(fetchProductData());
   }, []);
 
   return (

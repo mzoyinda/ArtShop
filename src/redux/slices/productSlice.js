@@ -2,11 +2,11 @@ import { createSlice, current } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const getProductsfromLocalStorage = window?.localStorage?.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
+
 const initialState = {
   loading: true,
-  products: JSON.parse(localStorage.getItem("products"))
-    ? JSON.parse(localStorage.getItem("products"))
-    : [],
+  products: getProductsfromLocalStorage
 };
 
 export const fetchProductData = createAsyncThunk(
