@@ -3,7 +3,6 @@
 import { Button, CartContainer, FlexBox } from "@/assets/styles";
 import { addToCart, removeFromCart } from "@/redux/slices/cartSlice";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +11,8 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 const Cart = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const { loading, cartItems, itemsPrice } = useSelector((state) => state.cart);
+  
+  const {cartItems, itemsPrice } = useSelector((state) => state.cart);
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));

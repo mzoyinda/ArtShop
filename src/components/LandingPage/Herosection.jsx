@@ -2,8 +2,10 @@ import { Banner } from '@/assets/styles'
 import Image from "next/image";
 import React from "react";
 import Ratings from '../Ratings';
+import { useRouter } from 'next/navigation';
 
 const Herosection = () => {
+  const router = useRouter();
   return (
     <Banner>
       <div className="wrapper">
@@ -26,7 +28,7 @@ const Herosection = () => {
           Explore a world of creativity with Art.shop&apos;s curated collections
           of posters
         </p>
-        <button>Explore All</button>
+        <button onClick={() => router.push("/#collections")}>Explore All</button>
         <p>4.8 star rating . Excellent</p>
         <Ratings rate="4.8" />
       </div>

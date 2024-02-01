@@ -9,18 +9,18 @@ export const Button = styled.div`
   font-weight: 600;
   border-radius: 20px;
 
-  &:hover{
-    opacity:0.8;
+  &:hover {
+    opacity: 0.8;
     cursor: pointer;
   }
 `;
 
 export const FlexBox = styled.div`
-display: flex;
-width: 100%;
-justify-content: center;
-align-items: center;
-margin-bottom: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 `;
 
 export const Wrapper = styled.div`
@@ -43,7 +43,6 @@ export const HeaderContainer = styled.header`
   padding-bottom: 0;
   height: 46px;
   position: sticky;
-  /* background-color: #ffffff; */
   top: 0;
   left: 0;
   z-index: 1;
@@ -76,12 +75,12 @@ export const HeaderContainer = styled.header`
       gap: 32px;
       position: relative;
 
-      a{
+      a {
         font-weight: 600;
       }
 
-      .cart-badge{
-        background-color: #FF7E5D;
+      .cart-badge {
+        background-color: #ff7e5d;
         color: white;
         width: 10px;
         font-size: 12px;
@@ -99,7 +98,7 @@ export const HeaderContainer = styled.header`
   @media (min-width: 768px) {
     padding: 17px 73px;
     padding-bottom: 0;
-    .nav__links{
+    .desktop .nav__links {
       gap: 42px;
     }
     .collection {
@@ -411,93 +410,93 @@ export const RatingsContainer = styled.div`
 `;
 
 export const CartContainer = styled.section`
-padding: 24px;
-margin-bottom: 50vh;
+  padding: 24px;
+  margin-bottom: 50vh;
 
-h1 {
-  margin: 50px auto;
-  margin-left: 50px;
-}
-
-.group {
-  .wrapper {
-    overflow: scroll;
-    table {
-      width: 50vw;
-      text-align: center;
-      border-collapse: collapse;
-      overflow: scroll;
-      tr {
-        border: 1px solid gray;
-      }
-      th,
-      td {
-        padding: 10px;
-      }
-      input {
-        padding: 5px;
-        width: 30px;
-        text-align: center;
-      }
-      thead {
-        margin-bottom: 25px;
-      }
-      td.delete {
-        button {
-          background-color: #201d46;
-          padding: 5px 15px;
-          color: white;
-          font-size: 14px;
-        }
-      }
-      td.flexbox {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        width: max-content;
-
-        img {
-          object-fit: cover;
-          width: 60px;
-          height: 60px;
-          margin-right: 5px;
-        }
-      }
-    }
-    button {
-      justify-self: flex-start;
-      margin: 20px auto;
-    }
+  h1 {
+    margin: 50px auto;
+    margin-left: 50px;
   }
 
-  .total {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    h3 {
-      margin-bottom: 20px;
-    }
-  }
-}
-
-@media (min-width: 650px) {
   .group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-  }
-  .container {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    button {
-      justify-self: flex-start;
+    .wrapper {
+      overflow: scroll;
+      table {
+        width: 50vw;
+        text-align: center;
+        border-collapse: collapse;
+        overflow: scroll;
+        tr {
+          border: 1px solid gray;
+        }
+        th,
+        td {
+          padding: 10px;
+        }
+        input {
+          padding: 5px;
+          width: 30px;
+          text-align: center;
+        }
+        thead {
+          margin-bottom: 25px;
+        }
+        td.delete {
+          button {
+            background-color: #201d46;
+            padding: 5px 15px;
+            color: white;
+            font-size: 14px;
+          }
+        }
+        td.flexbox {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          width: max-content;
+
+          img {
+            object-fit: cover;
+            width: 60px;
+            height: 60px;
+            margin-right: 5px;
+          }
+        }
+      }
+      button {
+        justify-self: flex-start;
+        margin: 20px auto;
+      }
+    }
+
+    .total {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      h3 {
+        margin-bottom: 20px;
+      }
     }
   }
-}
+
+  @media (min-width: 650px) {
+    .group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 70px;
+    }
+    .container {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      button {
+        justify-self: flex-start;
+      }
+    }
+  }
 `;
 
 export const SuccessContainer = styled.header`

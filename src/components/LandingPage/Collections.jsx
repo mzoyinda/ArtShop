@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import {Bounce, ToastContainer, toast } from 'react-toastify';
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 import { data } from "../../utils/data";
 import Image from "next/image";
@@ -14,32 +14,29 @@ import { addToCart } from "@/redux/slices/cartSlice";
 
 const Products = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const { cartItems } = useSelector((state) => state.cart)
-  const router = useRouter()
-  const [qty, setQty] = useState(1)
+  const { cartItems } = useSelector((state) => state.cart);
+  const router = useRouter();
+  const [qty, setQty] = useState(1);
 
   const { loading, products } = useSelector((state) => state.productData);
 
   useEffect(() => {
-    // dispatch(fetchProductData());
+    dispatch(fetchProductData());
   }, []);
- 
-  const addToCartHandler = ({product}) => {
+
+  const addToCartHandler = ({ product }) => {
     let newQty = qty;
-
-  
-      const existItem = cartItems.find((x) => x.row_id === product.row_id)
-      if (existItem) {
-          newQty = existItem.qty + 1
-        } 
-
-    let a =cartItems.reduce((a, c) => a + c.qty, 0)
-    console.log(a, cartItems)
-    
-    dispatch(addToCart({ ...product, qty: newQty }))
-    toast.success('Product Now in Cart!', {
+    const existItem = cartItems.find((x) => x.row_id === product.row_id);
+    // if item exist increse the quantity
+    if (existItem) {
+      newQty = existItem.qty + 1;
+    }
+    // send item to cart
+    dispatch(addToCart({ ...product, qty: newQty }));
+    // notify success
+    toast.success("Product Now in Cart!", {
       position: "top-left",
       autoClose: 2000,
       hideProgressBar: false,
@@ -48,13 +45,12 @@ const Products = () => {
       draggable: true,
       theme: "light",
       transition: Bounce,
-      });
-  }
-
+    });
+  };
 
   return (
     <ProductContainer id="collections">
-       <ToastContainer />
+      <ToastContainer />
       <h3>Discover unique art for your space</h3>
       {loading && products.length === 0 ? (
         <div>Fetching Collections...</div>
@@ -78,7 +74,10 @@ const Products = () => {
                         width={100}
                         height={300}
                       />
-                      <button onClick={(e)=> addToCartHandler({product})}> Add to cart</button>
+                      <button onClick={(e) => addToCartHandler({ product })}>
+                        {" "}
+                        Add to cart
+                      </button>
                     </div>
                     <div className="bottom">
                       <div className="flexbox">
@@ -86,10 +85,7 @@ const Products = () => {
                         <p className="price">$ {product.price}</p>
                       </div>
                       <p>{product.details}</p>
-                      <p>
-                        {" "}
-                        <Ratings show="true" rate={product.rating} />
-                      </p>
+                      <Ratings show="true" rate={product.rating} />
                     </div>
                   </div>
                 );

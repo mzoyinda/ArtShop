@@ -1,46 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { data } from "../../utils/data";
 import { FilterContainer } from "@/assets/styles";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "@/redux/slices/productSlice";
 
+const ProductsHeader = ({ setFilteredProducts }) => {
+  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.productData);
 
-const ProductsHeader = ({setFilteredProducts}) => {
-    
-    const dispatch=useDispatch();
-    const { products} = useSelector((state) => state.productData)
-
-    const [filters, setFilters] = useState({
-        s: "",
-        sort: "",
-    });
-
+  const [filters, setFilters] = useState({
+    query: "",
+    sort: "",
+  });
 
   useEffect(() => {
-    console.log(products, products.type)
-          let productData =  products.filter(
-            (p) =>
-              p.name.toLowerCase().indexOf(filters.s.toString().toLowerCase()) >= 0 
-          );
-      
-          if (filters.sort === "asc" || filters.sort === "desc") {
-            productData.sort((a, b) => {
-              const diff = a.price - b.price;
-      
-              if (diff === 0) return 0
-      
-              const sign = Math.abs(diff) / diff; //-1, 1
-      
-              return filters.sort === "asc" ? sign : -sign;
-            });
-      }
-      setFilteredProducts(productData);
+    let productData = products.filter(
+      (p) =>
+        p.name.toLowerCase().indexOf(filters.query.toString().toLowerCase()) >=
+        0
+    );
+
+    if (filters.sort === "asc" || filters.sort === "desc") {
+      productData.sort((a, b) => {
+        const diff = a.price - b.price;
+
+        if (diff === 0) return 0;
+
+        const sign = Math.abs(diff) / diff; //-1, 1
+
+        return filters.sort === "asc" ? sign : -sign;
+      });
+    }
+    setFilteredProducts(productData);
   }, [filters, products]);
-  
-  const search = (s) => {
+
+  const search = (query) => {
     setFilters({
       ...filters,
-      s,
+      query,
     });
   };
 
@@ -50,7 +47,6 @@ const ProductsHeader = ({setFilteredProducts}) => {
       sort,
     });
   };
-
 
   return (
     <FilterContainer>
@@ -75,6 +71,5 @@ const ProductsHeader = ({setFilteredProducts}) => {
     </FilterContainer>
   );
 };
-
 
 export default ProductsHeader;

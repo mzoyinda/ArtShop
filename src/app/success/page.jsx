@@ -1,10 +1,13 @@
 "use client";
 
 import { SuccessContainer } from "@/assets/styles";
+import { useRouter } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
 
 const Success = () => {
+    const router = useRouter();
+
   return (
     <SuccessContainer>
       <div className="wrapper">
@@ -14,7 +17,7 @@ const Success = () => {
           <strong>Art.shop</strong>{" "}
         </p>
         We would let you know when the shop has been officially launched!
-        <button> Go back to Art Shop</button>
+        <button onClick={() => router.push("/#collections")}> Go back to Art Shop</button>
       </div>
     </SuccessContainer>
   );

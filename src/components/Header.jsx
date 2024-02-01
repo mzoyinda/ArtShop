@@ -16,13 +16,13 @@ const Header = ({ darkmode }) => {
         </Link>
 
         <nav className="nav__links">
-          <Link smooth href="/#collections" className="collection">
+          <Link href="/#collections" className="collection">
             Collections
           </Link>
           <span className="cart-badge">
             {cartItems.length === 0 ? '' : cartItems.reduce((a, c) => a + c.qty, 0)}
           </span>
-          <Link smooth href="/cart" className="products">
+          <Link href="/cart" className="products">
             Cart
           </Link>
         {darkmode ? (
