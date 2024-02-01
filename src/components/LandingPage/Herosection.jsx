@@ -15,7 +15,7 @@ const Herosection = () => {
           height={140}
           className="frame1"
           // priority 
-          src="/sunshine.png"
+          src="/sunshine.jpg"
         />
         <Image
           width={100}
