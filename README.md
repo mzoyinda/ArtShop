@@ -23,7 +23,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 ## Screenshot of the the website in light-mode
+![Art.shop in Light Mode](https://github.com/mzoyinda/ArtShop/blob/main/public/lightmode.png)
 
 
 ## Screenshot of the the website in dark-mode
-
+![Art.shop in Dark Mode](https://github.com/mzoyinda/ArtShop/blob/main/public/darkmode.png)

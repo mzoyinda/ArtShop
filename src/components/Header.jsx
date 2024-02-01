@@ -2,8 +2,12 @@ import Link from "next/link";
 import React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { HeaderContainer } from "@/assets/styles";
+import { useSelector } from "react-redux";
 
 const Header = ({ darkmode }) => {
+
+  const {cartItems } = useSelector((state) => state.cart)
+
   return (
     <HeaderContainer>
       <div className="desktop">
@@ -15,6 +19,9 @@ const Header = ({ darkmode }) => {
           <Link smooth href="/#collections" className="collection">
             Collections
           </Link>
+          <span className="cart-badge">
+            {cartItems.length === 0 ? '' : cartItems.reduce((a, c) => a + c.qty, 0)}
+          </span>
           <Link smooth href="/cart" className="products">
             Cart
           </Link>

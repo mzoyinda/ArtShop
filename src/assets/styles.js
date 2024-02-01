@@ -15,6 +15,14 @@ export const Button = styled.div`
   }
 `;
 
+export const FlexBox = styled.div`
+display: flex;
+width: 100%;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+`;
+
 export const Wrapper = styled.div`
   @media (min-width: 1700px) {
     display: flex;
@@ -383,7 +391,6 @@ export const RatingsContainer = styled.div`
 
 export const CartContainer = styled.section`
 padding: 24px;
-/* height: 60vh; */
 margin-bottom: 50vh;
 
 h1 {
@@ -406,8 +413,10 @@ h1 {
       td {
         padding: 10px;
       }
-      select {
-        padding: 5px 10px;
+      input {
+        padding: 5px;
+        width: 30px;
+        text-align: center;
       }
       thead {
         margin-bottom: 25px;
@@ -431,6 +440,7 @@ h1 {
           object-fit: cover;
           width: 60px;
           height: 60px;
+          margin-right: 5px;
         }
       }
     }

@@ -6,16 +6,39 @@ import ProductsHeader from "./ProductsHeader";
 import Ratings from "../Ratings";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "@/redux/slices/productSlice";
+import AddToCart from "./AddToCart";
+import { useRouter } from "next/navigation";
+import { addToCart } from "@/redux/slices/cartSlice";
 
 const Products = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
+  const { cartItems } = useSelector((state) => state.cart)
+  const router = useRouter()
+  const [qty, setQty] = useState(1)
 
   const { loading, products } = useSelector((state) => state.productData);
 
   useEffect(() => {
     // dispatch(fetchProductData());
   }, []);
+ 
+  const addToCartHandler = ({product}) => {
+    let newQty = qty;
+
+  
+      const existItem = cartItems.find((x) => x.row_id === product.row_id)
+      if (existItem) {
+          newQty = existItem.qty + 1
+        } 
+
+    let a =cartItems.reduce((a, c) => a + c.qty, 0)
+    console.log(a, cartItems)
+    
+    dispatch(addToCart({ ...product, qty: newQty }))
+  }
+
 
   return (
     <ProductContainer id="collections">
@@ -42,7 +65,7 @@ const Products = () => {
                         width={100}
                         height={300}
                       />
-                      <button>Add to cart</button>
+                      <button onClick={(e)=> addToCartHandler({product})}> Add to cart</button>
                     </div>
                     <div className="bottom">
                       <div className="flexbox">

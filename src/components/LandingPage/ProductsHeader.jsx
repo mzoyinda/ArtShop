@@ -20,8 +20,7 @@ const ProductsHeader = ({setFilteredProducts}) => {
     console.log(products, products.type)
           let productData =  products.filter(
             (p) =>
-              p.name.toLowerCase().indexOf(filters.s.toString().toLowerCase()) >= 0 ||
-              p.details.toLowerCase().indexOf(filters.s.toString().toLowerCase()) >= 0
+              p.name.toLowerCase().indexOf(filters.s.toString().toLowerCase()) >= 0 
           );
       
           if (filters.sort === "asc" || filters.sort === "desc") {
