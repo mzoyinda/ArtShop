@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,16 @@ const Cart = () => {
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
+    toast.error('Product Removed From Cart!', {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Bounce,
+        });
   };
 
   const addToCartHandler = async (product, qty) => {
@@ -23,6 +34,7 @@ const Cart = () => {
 
   return (
     <CartContainer>
+          <ToastContainer />
       <h1>Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <FlexBox>

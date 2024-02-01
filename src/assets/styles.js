@@ -73,7 +73,25 @@ export const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 42px;
+      gap: 32px;
+      position: relative;
+
+      a{
+        font-weight: 600;
+      }
+
+      .cart-badge{
+        background-color: #FF7E5D;
+        color: white;
+        width: 10px;
+        font-size: 12px;
+        text-align: center;
+        position: absolute;
+        top: -12px;
+        right: 50px;
+        padding: 3px 5px;
+        border-radius: 50%;
+      }
     }
   }
 
@@ -81,6 +99,9 @@ export const HeaderContainer = styled.header`
   @media (min-width: 768px) {
     padding: 17px 73px;
     padding-bottom: 0;
+    .nav__links{
+      gap: 42px;
+    }
     .collection {
       display: block;
     }

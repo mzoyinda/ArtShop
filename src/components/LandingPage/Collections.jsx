@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import {Bounce, ToastContainer, toast } from 'react-toastify';
+
 import { data } from "../../utils/data";
 import Image from "next/image";
 import { ProductContainer } from "@/assets/styles";
@@ -6,7 +9,6 @@ import ProductsHeader from "./ProductsHeader";
 import Ratings from "../Ratings";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductData } from "@/redux/slices/productSlice";
-import AddToCart from "./AddToCart";
 import { useRouter } from "next/navigation";
 import { addToCart } from "@/redux/slices/cartSlice";
 
@@ -37,11 +39,22 @@ const Products = () => {
     console.log(a, cartItems)
     
     dispatch(addToCart({ ...product, qty: newQty }))
+    toast.success('Product Now in Cart!', {
+      position: "top-left",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+      transition: Bounce,
+      });
   }
 
 
   return (
     <ProductContainer id="collections">
+       <ToastContainer />
       <h3>Discover unique art for your space</h3>
       {loading && products.length === 0 ? (
         <div>Fetching Collections...</div>
