@@ -10,7 +10,7 @@ import { HomeContainer, Wrapper } from "@/assets/styles";
 
 const App = ({ children }) => {
   const darkmode = useDarkMode(false);
-  const theme = darkmode.value ? darkTheme : lightTheme;
+  const theme = darkmode.value ? lightTheme : darkTheme;
 
   return (
     <ThemeProvider theme={theme}>
