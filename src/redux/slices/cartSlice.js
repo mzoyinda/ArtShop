@@ -18,7 +18,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-    state.loading = true
       const item = action.payload
       const existItem = state.cartItems.find((x) => x.row_id === item.row_id)
       if (existItem) {
@@ -35,10 +34,8 @@ const cartSlice = createSlice({
         Number(state.itemsPrice)
       )
       Cookies.set('cart', JSON.stringify(state))
-      state.loading = false
     },
     removeFromCart: (state, action) => {
-        state.loading = true
       state.cartItems = state.cartItems.filter((x) => x.row_id !== action.payload)
       state.itemsPrice = addDecimals(
         state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
@@ -47,7 +44,6 @@ const cartSlice = createSlice({
         Number(state.itemsPrice) 
       )
       Cookies.set('cart', JSON.stringify(state))
-      state.loading = false
     }, 
   },
 })

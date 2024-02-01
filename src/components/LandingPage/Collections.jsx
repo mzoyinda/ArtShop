@@ -52,7 +52,7 @@ const Products = () => {
     <ProductContainer id="collections">
       <ToastContainer />
       <h3>Discover unique art for your space</h3>
-      {loading && products.length === 0 ? (
+      {loading ? (
         <div>Fetching Collections...</div>
       ) : (
         <>

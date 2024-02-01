@@ -1,12 +1,20 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { HeaderContainer } from "@/assets/styles";
 import { useSelector } from "react-redux";
 
 const Header = ({ darkmode }) => {
+  const { cartItems } = useSelector((state) => state.cart);
+  const [count, setCount] = useState(0)
 
-  const {cartItems } = useSelector((state) => state.cart)
+  useEffect(() => {
+    const NewCount = cartItems.reduce((a, c) => a + c.qty, 0);
+    setCount(NewCount)
+  }, [cartItems])
+  
 
   return (
     <HeaderContainer>
@@ -19,21 +27,15 @@ const Header = ({ darkmode }) => {
           <Link href="/#collections" className="collection">
             Collections
           </Link>
-          <span className="cart-badge">
-            {cartItems.length === 0 ? '' : cartItems.reduce((a, c) => a + c.qty, 0)}
-          </span>
+          {!count ? "" : (
+            <span className="cart-badge">{count}</span>
+            )}
           <Link href="/cart" className="products">
             Cart
           </Link>
-        {darkmode ? (
-          <button onClick={darkmode.toggle}>
-            {darkmode.value ? <FaMoon /> : <FaSun />}
-          </button>
-        ) : (
-          <button>
-            <FaSun />
-          </button>
-        )}
+            <button onClick={darkmode.toggle}>
+              {darkmode.value ? <FaMoon /> : <FaSun />}
+            </button>
         </nav>
       </div>
     </HeaderContainer>
