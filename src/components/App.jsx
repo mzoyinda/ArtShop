@@ -9,7 +9,7 @@ import { lightTheme, darkTheme, GlobalStyles } from "../themeConfig";
 import { HomeContainer, Wrapper } from "@/assets/styles";
 
 const App = ({ children }) => {
-  const darkmode = useDarkMode(false);
+  const darkmode = useDarkMode();
   const theme = darkmode.value ? lightTheme : darkTheme;
 
   return (

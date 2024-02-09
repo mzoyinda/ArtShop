@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { data } from "../../utils/data";
 import { FilterContainer } from "@/assets/styles";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductData } from "@/redux/slices/productSlice";
 
 const ProductsHeader = ({ setFilteredProducts }) => {
   const dispatch = useDispatch();

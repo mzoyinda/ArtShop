@@ -1,8 +1,7 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-
 import { Bounce, ToastContainer, toast } from "react-toastify";
-
-import { data } from "../../utils/data";
 import Image from "next/image";
 import { ProductContainer } from "@/assets/styles";
 import ProductsHeader from "./ProductsHeader";
@@ -22,6 +21,7 @@ const Products = () => {
 
   const { loading, products } = useSelector((state) => state.productData);
 
+  // fetch products
   useEffect(() => {
     dispatch(fetchProductData());
   }, []);
@@ -29,12 +29,15 @@ const Products = () => {
   const addToCartHandler = ({ product }) => {
     let newQty = qty;
     const existItem = cartItems.find((x) => x.row_id === product.row_id);
-    // if item exist increse the quantity
+
+    // if item exist increase the quantity
     if (existItem) {
       newQty = existItem.qty + 1;
     }
+
     // send item to cart
     dispatch(addToCart({ ...product, qty: newQty }));
+
     // notify success
     toast.success("Product Now in Cart!", {
       position: "top-left",

@@ -1,3 +1,5 @@
+"use client";
+
 import { Banner } from '@/assets/styles'
 import Image from "next/image";
 import React from "react";
@@ -14,7 +16,6 @@ const Herosection = () => {
           width={100}
           height={140}
           className="frame1"
-          // priority 
           src="/sunshine.jpg"
         />
         <Image
