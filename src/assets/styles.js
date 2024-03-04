@@ -240,6 +240,7 @@ export const ProductContainer = styled.section`
     max-width: 250px;
   }
   .gallery {
+    padding: 0 3vw;
     .box {
       margin-top: 20px;
       min-height: 450px;

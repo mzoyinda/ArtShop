@@ -13,7 +13,7 @@ const Herosection = () => {
       <div className="wrapper">
         <Image
           alt="quote frame"
-          width={100}
+          width={500}
           height={140}
           className="frame1"
           src="/sunshine.jpg"
