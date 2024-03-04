@@ -74,8 +74,10 @@ const Products = () => {
                       <Image
                         src={`${product.url}`}
                         alt="autumn"
-                        width={100}
+                        width={500}
                         height={300}
+                        // fill
+                        priority
                       />
                       <button onClick={(e) => addToCartHandler({ product })}>
                         {" "}
